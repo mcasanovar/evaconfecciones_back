@@ -22,8 +22,6 @@ export default async (_, {input}) => {
       }
     });
 
-    // const newArrayPreviewPayments = orderFinded.previusPayments.filter((payment) => payment._id.toString() !== idPreviewPayment)
-
     const order = await Order.findOneAndUpdate({_id: idOrder}, {
       $set: {
         balance: orderFinded.balance + oldPreviewPayment.price,
