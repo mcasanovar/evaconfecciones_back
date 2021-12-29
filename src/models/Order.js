@@ -58,12 +58,7 @@ const OrderSchema = mongoose.Schema({
     required: true,
     unique: true
   },
-  clientFirstName: {
-    type: String,
-    required: true,
-    trim: true
-  },
-  clientLastName: {
+  clientName: {
     type: String,
     required: true,
     trim: true
@@ -80,16 +75,14 @@ const OrderSchema = mongoose.Schema({
     type: Number,
     required: true
   },
-  total: {
-    type: Number,
-    required: true
-  },
   balance: {
     type: Number,
     required: true
   },
-  previusPayments: [previusPaymentSchema],
   details: [detailSchema],
+  comments: {
+    type: String,
+  },
   state: {
     type: String,
     required: true

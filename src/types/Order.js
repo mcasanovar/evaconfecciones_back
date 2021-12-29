@@ -22,15 +22,13 @@ module.exports = gql`
     updatedAt: String,
     isDeleted: Boolean,
     code: String!,
-    clientFirstName: String!,
-    clientLastName: String!,
+    clientName: String!,
     phone: String!,
     subTotal: Int!,
     previewPayment: Int!,
-    total: Int!,
     balance: Int!,
-    previusPayments: [PreviusPayment],
     details: [Detail],
+    comments: String,
     state: String!
   }
 
@@ -39,6 +37,7 @@ module.exports = gql`
   }
 
   input DetailsInput {
+    _id: ID!
     collage: String!,
     clothes: String!,
     size: String!,
@@ -48,11 +47,11 @@ module.exports = gql`
   }
 
   input CreateOrderInput {
-    clientFirstName: String!,
-    clientLastName: String!,
+    clientName: String!,
     phone: String!,
-    previusPayments: [PreviusPaymentInput],
+    previewPayment: Int!
     details: [DetailsInput]!,
+    comments: String!
   }
 
   input PreviewPaymentInput {

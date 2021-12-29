@@ -3,7 +3,7 @@ import Order from '../../../models/Order'
 
 export default async (_, {input}) => {
 
-  const { details, previusPayments } = input
+  const { details, previewPayment } = input
 
   try{
     const timestamp = new Date().getTime();
@@ -12,15 +12,12 @@ export default async (_, {input}) => {
 
     //obtener el subtotal de la orden
     let subTotal = 0
-    let previewPayment = 0
 
     if(!!details.length){
       subTotal = details.reduce((acc, current) => acc + current.total, 0)
     }
 
-    if(!!previusPayments.length){
-      previewPayment = previusPayments.reduce((acc, current) => acc + current.price, 0)
-    }
+    console.log(details)
 
     const order = new Order({
       ...input,
@@ -29,7 +26,6 @@ export default async (_, {input}) => {
       code,
       subTotal,
       previewPayment,
-      total: subTotal,
       balance: subTotal - previewPayment,
       state: 'Pendiente'
     })
@@ -37,6 +33,7 @@ export default async (_, {input}) => {
     return order
   }
   catch(e){
+    console.log(e)
     throw new ApolloError(e)
   }
   
