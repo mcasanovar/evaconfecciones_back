@@ -13,7 +13,9 @@ module.exports = gql`
     size: String!,
     uniquePrice: Int!,
     quantity: Int!,
-    total: Int!
+    total: Int!,
+    completed: Boolean!
+    _id: String!
   }
 
   type Order {
@@ -29,7 +31,8 @@ module.exports = gql`
     balance: Int!,
     details: [Detail],
     comments: String,
-    state: String!
+    state: String!,
+    percentage: Int!
   }
 
   input PreviusPaymentInput {
@@ -43,7 +46,8 @@ module.exports = gql`
     size: String!,
     uniquePrice: Int!,
     quantity: Int!,
-    total: Int!
+    total: Int!,
+    completed: Boolean!
   }
 
   input CreateOrderInput {
@@ -76,7 +80,7 @@ module.exports = gql`
   # QUERIES
 
   type Query {
-    getOrders: [Order],
+    getOrders(year: String): [Order],
     getOrderById(id: ID!): Order
   }
 

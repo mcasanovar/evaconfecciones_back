@@ -27,7 +27,8 @@ export default async (_, {input}) => {
       subTotal,
       previewPayment,
       balance: subTotal - previewPayment,
-      state: 'Pendiente'
+      state: 'Pendiente',
+      percentage: 0
     })
     order.save()
     return order

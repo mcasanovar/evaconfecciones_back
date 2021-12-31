@@ -38,6 +38,10 @@ const detailSchema = mongoose.Schema({
   total: {
     type: Number,
     required: true
+  },
+  completed: {
+    type: Boolean,
+    required: true
   }
 })
 
@@ -86,6 +90,9 @@ const OrderSchema = mongoose.Schema({
   state: {
     type: String,
     required: true
+  },
+  percentage: {
+    type: Number
   }
 })
 
