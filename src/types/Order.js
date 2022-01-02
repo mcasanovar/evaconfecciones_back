@@ -55,7 +55,18 @@ module.exports = gql`
     phone: String!,
     previewPayment: Int!
     details: [DetailsInput]!,
-    comments: String!
+    comments: String!,
+    isDirectBuy: Boolean
+  }
+
+  input UpdateOrderInput {
+    id: ID!,
+    clientName: String!,
+    phone: String!,
+    comments: String!,
+    previewPayment: Int!
+    percentage: Int!,
+    details: [DetailsInput]!,
   }
 
   input PreviewPaymentInput {
@@ -88,6 +99,7 @@ module.exports = gql`
 
   type Mutation {
     createOrder(input: CreateOrderInput!): Order
+    updateOrder(input: UpdateOrderInput!): Order
     addPreviewPayment(input: PreviewPaymentInput!): Order
     removePreviewPayment(input: PreviewPaymentInput!): Order
     addItemToOrder(input: addItemInput!): Order

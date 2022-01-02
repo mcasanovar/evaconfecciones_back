@@ -1,34 +1,51 @@
 import { ApolloError } from "apollo-server"
 import Order from '../../../models/Order'
+import { getTotalPrice } from "../../../../functions";
 
 export default async (_, {input}) => {
 
-  const { details, previewPayment } = input
+  const { details, previewPayment, isDirectBuy } = input
 
   try{
+    let subTotal = 0
     const timestamp = new Date().getTime();
 
     const code = `E${timestamp}`
 
-    //obtener el subtotal de la orden
-    let subTotal = 0
-
     if(!!details.length){
-      subTotal = details.reduce((acc, current) => acc + current.total, 0)
+      subTotal = getTotalPrice(details, "total")
     }
 
-    console.log(details)
+    let balance = subTotal - previewPayment
+    let state = 'Pendiente'
+    let percentage = 0
+    let detailsMapped = details
+
+
+    if(isDirectBuy){
+      balance = subTotal
+      state = 'Entregado'
+      percentage = 100
+      detailsMapped = details.map(item => {
+        return {
+          ...item,
+          completed: true
+        }
+      })
+    }
 
     const order = new Order({
       ...input,
+      previewPayment: isDirectBuy ? 0 : previewPayment,
+      details: detailsMapped,
       updatedAt: Date.now(),
       isDeleted: false,
       code,
       subTotal,
       previewPayment,
-      balance: subTotal - previewPayment,
-      state: 'Pendiente',
-      percentage: 0
+      balance,
+      state,
+      percentage
     })
     order.save()
     return order
