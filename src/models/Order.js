@@ -54,6 +54,10 @@ const OrderSchema = mongoose.Schema({
     type: Date,
     required: true,
   },
+  estimatedDeliveryDate: {
+    type: Date,
+    required: true
+  },
   isDeleted: {
     type: Boolean
   },

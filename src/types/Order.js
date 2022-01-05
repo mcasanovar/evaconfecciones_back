@@ -22,6 +22,7 @@ module.exports = gql`
     _id: ID!
     createAt: String,
     updatedAt: String,
+    estimatedDeliveryDate: String,
     isDeleted: Boolean,
     code: String!,
     clientName: String!,
@@ -56,7 +57,8 @@ module.exports = gql`
     previewPayment: Int!
     details: [DetailsInput]!,
     comments: String!,
-    isDirectBuy: Boolean
+    isDirectBuy: Boolean,
+    estimatedDeliveryDate: String!
   }
 
   input UpdateOrderInput {
