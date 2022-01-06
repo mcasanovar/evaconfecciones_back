@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node src/index.js",
+    "build": "babel src -d dist",
+    "start": "npm run build && babel-node dist/index.js",
     "dev": "nodemon src/index.js --exec babel-node"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "engines":{
-    "node":"16.x"
+  "engines": {
+    "node": "16.x"
   },
   "dependencies": {
     "apollo-server": "^3.5.0",
@@ -25,6 +26,9 @@
     "@babel/cli": "^7.16.0",
     "@babel/core": "^7.16.0",
     "@babel/node": "^7.16.0",
+    "@babel/plugin-proposal-export-default-from": "^7.16.7",
+    "@babel/plugin-transform-modules-commonjs": "^7.16.7",
+    "@babel/plugin-transform-runtime": "^7.16.7",
     "@babel/preset-env": "^7.16.4",
     "nodemon": "^2.0.15"
   }
