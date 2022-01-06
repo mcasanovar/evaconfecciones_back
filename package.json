@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "engines":{
-    "node":"16.13.0"
+    "node":"16.x"
   },
   "dependencies": {
     "apollo-server": "^3.5.0",
