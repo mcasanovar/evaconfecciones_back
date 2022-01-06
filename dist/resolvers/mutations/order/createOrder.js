@@ -17,7 +17,7 @@ var _apolloServer = require("apollo-server");
 
 var _Order = _interopRequireDefault(require("../../../models/Order.js"));
 
-var _index = require("../../../../functions/index.js");
+var _functions = require("../../../functions");
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
@@ -39,7 +39,7 @@ var _default = /*#__PURE__*/function () {
             code = "E".concat(timestamp);
 
             if (!!details.length) {
-              subTotal = (0, _index.getTotalPrice)(details, "total");
+              subTotal = (0, _functions.getTotalPrice)(details, "total");
             }
 
             balance = subTotal - previewPayment;

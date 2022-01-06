@@ -15,7 +15,7 @@ var _apolloServer = require("apollo-server");
 
 var _Order = _interopRequireDefault(require("../../../models/Order.js"));
 
-var _index = require("../../../../functions/index.js");
+var _functions = require("../../../functions");
 
 var _default = /*#__PURE__*/function () {
   var _ref2 = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee(_, _ref) {
@@ -45,7 +45,7 @@ var _default = /*#__PURE__*/function () {
             state = 'Pendiente';
 
             if (!!details.length) {
-              subTotal = (0, _index.getTotalPrice)(details, "total");
+              subTotal = (0, _functions.getTotalPrice)(details, "total");
             }
 
             if (details.every(function (item) {
