@@ -1,5 +1,5 @@
 import { ApolloError } from "apollo-server"
-import Collage from '../../../models/Collage'
+import Collage from '../../../models/Collage.js'
 
 export default async (_, {id}) => {
 

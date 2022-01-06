@@ -1,6 +1,6 @@
 import { ApolloError } from "apollo-server"
-import Order from '../../../models/Order'
-import { getTotalPrice } from "../../../../functions";
+import Order from '../../../models/Order.js'
+import { getTotalPrice } from "../../../../functions/index.js";
 
 export default async (_, {input}) => {
 

@@ -1,1 +1,1 @@
-export { default as getTotalPrice } from './getTotalPrice'
+export { default as getTotalPrice } from './getTotalPrice.js'

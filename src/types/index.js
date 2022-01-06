@@ -1,9 +1,9 @@
-import Collage from './Collages'
-import User from './User'
-import Clothes from './Clothes'
-import Size from './Size'
-import Item from './Item'
-import Order from './Order'
+import Collage from './Collages.js'
+import User from './User.js'
+import Clothes from './Clothes.js'
+import Size from './Size.js'
+import Item from './Item.js'
+import Order from './Order.js'
 
 module.exports = [
   Collage,

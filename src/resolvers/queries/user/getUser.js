@@ -1,6 +1,6 @@
 import { ApolloError } from "apollo-server";
-import User from '../../../models/User'
-import { JsonWebToken } from '../../../libs'
+import User from '../../../models/User.js'
+import { JsonWebToken } from '../../../libs/index.js'
 
 require('dotenv').config({ path: ".env" })
 

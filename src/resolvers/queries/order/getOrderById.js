@@ -1,5 +1,5 @@
 import { ApolloError } from "apollo-server";
-import Order from '../../../models/Order'
+import Order from '../../../models/Order.js'
 
 export default async (_, {id}) => {
   try {

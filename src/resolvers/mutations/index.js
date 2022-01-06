@@ -1,25 +1,25 @@
 //user
-import authenticateUser from './user/authenticateUser'
-import createUser from './user/createUser'
+import authenticateUser from './user/authenticateUser.js'
+import createUser from './user/createUser.js'
 //collages
-import createCollage from './collage/createCollage'
-import deleteCollage from './collage/deleteCollage'
+import createCollage from './collage/createCollage.js'
+import deleteCollage from './collage/deleteCollage.js'
 //clothes
-import createClothes from './clothes/createClothes'
-import deleteClothes from './clothes/deleteClothes'
+import createClothes from './clothes/createClothes.js'
+import deleteClothes from './clothes/deleteClothes.js'
 //sizes
-import createSize from './size/createSize'
-import deleteSize from './size/deleteSize'
+import createSize from './size/createSize.js'
+import deleteSize from './size/deleteSize.js'
 //items
-import createItem from './item/createItem'
-import deleteItem from './item/deleteItem'
+import createItem from './item/createItem.js'
+import deleteItem from './item/deleteItem.js'
 //orders
-import createOrder from './order/createOrder'
-import updateOrder from './order/updateOrder'
-import addPreviewPayment from './order/addPreviewPayment'
-import removePreviewPayment from './order/removePreviewPayment'
-import addItemToOrder from './order/addItemToOrder'
-import removeItemToOrder from './order/removeItemToOrder'
+import createOrder from './order/createOrder.js'
+import updateOrder from './order/updateOrder.js'
+import addPreviewPayment from './order/addPreviewPayment.js'
+import removePreviewPayment from './order/removePreviewPayment.js'
+import addItemToOrder from './order/addItemToOrder.js'
+import removeItemToOrder from './order/removeItemToOrder.js'
 
 module.exports = {
   createCollage,

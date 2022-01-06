@@ -1,5 +1,5 @@
-import queries from './queries'
-import mutations from './mutations'
+import queries from './queries/index.js'
+import mutations from './mutations/index.js'
 
 module.exports = {
   Query: {

@@ -1,7 +1,7 @@
 import { ApolloError } from "apollo-server";
 import bcryptjs from 'bcryptjs'
 
-import User from '../../../models/User'
+import User from '../../../models/User.js'
 
 export default async (_, { input }) => {
   const { email, password } = input;

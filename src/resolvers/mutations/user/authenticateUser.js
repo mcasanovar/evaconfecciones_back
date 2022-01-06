@@ -1,8 +1,8 @@
 import { ApolloError } from "apollo-server";
 import bcryptjs from 'bcryptjs'
-import { JsonWebToken } from '../../../libs'
+import { JsonWebToken } from '../../../libs/index.js'
 
-import User from '../../../models/User'
+import User from '../../../models/User.js'
 
 require('dotenv').config({ path: ".env" })
 

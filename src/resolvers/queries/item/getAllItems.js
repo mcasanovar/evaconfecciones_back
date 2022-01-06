@@ -1,5 +1,5 @@
 import { ApolloError } from "apollo-server";
-import Items from '../../../models/Items'
+import Items from '../../../models/Items.js'
 
 export default async (_, {}) => {
   try {

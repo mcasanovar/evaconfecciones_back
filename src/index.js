@@ -1,9 +1,9 @@
 import { ApolloServer } from 'apollo-server'
 import { ApolloServerPluginLandingPageGraphQLPlayground } from 'apollo-server-core'
-import typeDefs from './types'
-import resolvers from './resolvers'
-import connectDb from './config/db'
-import { JsonWebToken } from './libs'
+import typeDefs from './types/index.js'
+import resolvers from './resolvers/index.js'
+import connectDb from './config/db.js'
+import { JsonWebToken } from './libs/index.js'
 
 require('dotenv').config({ path: ".env" })
 

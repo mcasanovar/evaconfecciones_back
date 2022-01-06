@@ -1,5 +1,5 @@
 import { ApolloError } from "apollo-server"
-import Size from '../../../models/Size'
+import Size from '../../../models/Size.js'
 
 export default async (_, {id}) => {
 

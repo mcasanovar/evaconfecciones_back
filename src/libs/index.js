@@ -1,1 +1,1 @@
-export { default as JsonWebToken} from './jsonwebtoken';
+export { default as JsonWebToken} from './jsonwebtoken.js';
