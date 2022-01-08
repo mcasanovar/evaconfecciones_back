@@ -68,6 +68,7 @@ module.exports = gql`
     comments: String!,
     previewPayment: Int!
     percentage: Int!,
+    isDelivered: Boolean,
     details: [DetailsInput]!,
   }
 

@@ -4,7 +4,7 @@ import { getTotalPrice } from "../../../../functions";
 
 export default async (_, { input }) => {
   try {
-    const { id, clientName, phone, comments, details, previewPayment, percentage } = input
+    const { id, clientName, phone, comments, details, previewPayment, percentage, isDelivered = false } = input
 
     const oldOrder = await Order.findById(id)
 
@@ -19,6 +19,10 @@ export default async (_, { input }) => {
 
     if(details.every(item => item.completed)){
       state = 'Listo para entrega'
+    }
+
+    if(isDelivered){
+      state = 'Entregado'
     }
 
     const newOrder = {
