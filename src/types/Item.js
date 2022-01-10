@@ -19,6 +19,12 @@ module.exports = gql`
     price: Int!,
   }
 
+  type ReturnObjectManyInsert {
+    inserted: Int!,
+    noInserted: Int!,
+    detailsNoInserted: [Item]
+  }
+
   # QUERIES
 
   type Query {
@@ -30,5 +36,6 @@ module.exports = gql`
   type Mutation {
     createItem(input: CreateItemInput!): Item!
     deleteItem(id: ID!): String
+    addManyItems(selectedClothes: String): ReturnObjectManyInsert!
   }
 `

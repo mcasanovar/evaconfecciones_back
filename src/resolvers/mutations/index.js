@@ -13,6 +13,7 @@ import deleteSize from './size/deleteSize'
 //items
 import createItem from './item/createItem'
 import deleteItem from './item/deleteItem'
+import addManyItems from './item/addManyItems'
 //orders
 import createOrder from './order/createOrder'
 import updateOrder from './order/updateOrder'
@@ -37,5 +38,6 @@ module.exports = {
   addPreviewPayment,
   removePreviewPayment,
   addItemToOrder,
-  removeItemToOrder
+  removeItemToOrder,
+  addManyItems
 }
