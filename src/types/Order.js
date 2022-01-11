@@ -103,6 +103,7 @@ module.exports = gql`
   type Mutation {
     createOrder(input: CreateOrderInput!): Order
     updateOrder(input: UpdateOrderInput!): Order
+    deleteOrder(id: ID!): String
     addPreviewPayment(input: PreviewPaymentInput!): Order
     removePreviewPayment(input: PreviewPaymentInput!): Order
     addItemToOrder(input: addItemInput!): Order

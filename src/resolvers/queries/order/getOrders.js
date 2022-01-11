@@ -18,8 +18,6 @@ export default async (_, {year}) => {
     }})
     .sort({ createAt: 1 })
 
-    console.log(ordersFinded)
-
     return ordersFinded
 
   } catch (error) {

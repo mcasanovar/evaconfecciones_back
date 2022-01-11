@@ -17,6 +17,7 @@ import addManyItems from './item/addManyItems'
 //orders
 import createOrder from './order/createOrder'
 import updateOrder from './order/updateOrder'
+import deleteOrder from './order/deleteOrder'
 import addPreviewPayment from './order/addPreviewPayment'
 import removePreviewPayment from './order/removePreviewPayment'
 import addItemToOrder from './order/addItemToOrder'
@@ -35,6 +36,7 @@ module.exports = {
   deleteItem,
   createOrder,
   updateOrder,
+  deleteOrder,
   addPreviewPayment,
   removePreviewPayment,
   addItemToOrder,
